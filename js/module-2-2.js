@@ -30,3 +30,44 @@ for(let i = 0; i<fifthArray.length; i+=1) {
     }
     console.log(`iteration ${i + 1} = ${fifthArray[i]}`); //выдаст элементы с четным индексов(2,4,6)
 }
+
+let sixthArray = [1,2,3, "кошка умеет говорить мяу", 5, 6]
+for(let i = 0; i<sixthArray.length; i+=1) {
+    if (i === 5) {
+        break
+    }
+    console.log(`iteration ${i + 1} = ${sixthArray[i]}`); //после 5 итерации прерывает цикл
+}
+
+//многомерный массив
+let multiArray = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+]
+console.log(multiArray);
+console.log(multiArray.length); //3
+console.log(multiArray[0]); //[1, 2, 3]
+
+let soManyArrays = [
+    [1,2,3, 20, 60],
+    [4,5,6, 69, 100],
+    [7,8,9, 80, 90],
+]
+for (let array of soManyArrays) { //делит многомерный массив на отдельные массивы
+    console.log(array);
+    for (let numbers of array) { //делит получившиеся массивы на отдельные числа
+        console.log(numbers);
+    }
+}
+
+//методы массива
+let sliceArray = [1,2,3, "кошка умеет говорить мяу", 5, 6]
+let slicedArray = sliceArray.slice()
+console.log(slicedArray);//[1, 2, 3, "кошка умеет говорить мяу", 5, 6] сделал копию массива
+let twoFirstelements = sliceArray.slice(0,2) //вырезало элементы с индексом 0 и 1
+console.log(twoFirstelements); //[1, 2]
+
+let myString = "кошка умеет говорить мяу"
+let splitArray = myString.split(" ")
+console.log(splitArray); // ["кошка", "умеет", "говорить", "мяу"]
