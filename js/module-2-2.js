@@ -67,6 +67,7 @@ let slicedArray = sliceArray.slice()
 console.log(slicedArray);//[1, 2, 3, "кошка умеет говорить мяу", 5, 6] сделал копию массива
 let twoFirstelements = sliceArray.slice(0,2) //вырезало элементы с индексом 0 и 1
 console.log(twoFirstelements); //[1, 2]
+console.log(sliceArray); [1, 2, 3, "кошка умеет говорить мяу", 5, 6]
 
 let myString = "кошка умеет говорить мяу"
 let splitArray = myString.split(" ")
