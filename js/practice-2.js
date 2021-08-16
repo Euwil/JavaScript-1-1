@@ -122,3 +122,13 @@ slugify("Arrays for begginers") //возвращает "arrays-for-begginers"
 slugify("English for developer") //возвращает "english-for-developer"
 slugify("Ten secrets of JavaScript") //возвращает "ten-secrets-of-javascript"
 slugify("How to become a JUNIOR developer in TWO WEEKS") //возвращает "how-to-become-a-junior-developer-in-two-weeks"
+
+//14
+const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
+
+const firstTwoEls = fruits.slice(0,2);
+const nonExtremeEls = fruits.slice(1,4);
+const lastThreeEls = fruits.slice(-3);
+console.log(firstTwoEls); //["apple", "plum"]
+console.log(nonExtremeEls); //["plum", "pear", "orange"]
+console.log(lastThreeEls); //["pear", "orange", "banana"]
