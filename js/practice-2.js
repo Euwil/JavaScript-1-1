@@ -108,7 +108,7 @@ function makeStringFromArray(array, delimeter) {
   }
 makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ") //возвращает "Mango hurries to the train"
 makeStringFromArray(["M", "a", "n", "g", "o"], "") //возвращает "Mango"
-makeStringFromArray(["top", "picks", "for", "you"], "_") //возвращает "top_picks_for_you" */
+makeStringFromArray(["top", "picks", "for", "you"], "_") //возвращает "top_picks_for_you"
 
 //13
 function slugify(title) {
@@ -132,3 +132,101 @@ const lastThreeEls = fruits.slice(-3);
 console.log(firstTwoEls); //["apple", "plum"]
 console.log(nonExtremeEls); //["plum", "pear", "orange"]
 console.log(lastThreeEls); //["pear", "orange", "banana"]
+
+//15
+const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+const newClients = ['Peach', 'Houston'];
+
+const allClients = oldClients.concat(newClients);
+
+//16
+function makeArray(firstArray, secondArray, maxLength) {
+let newArray = firstArray.concat(secondArray)
+if (newArray.length > maxLength) {
+newArray = newArray.slice(0, maxLength)
+console.log(newArray);
+return newArray
+
+}
+return newArray
+}
+
+makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3) //возвращает ["Mango", "Poly", "Ajax"]
+makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4) //возвращает ["Mango", "Poly", "Houston", "Ajax"]
+makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3) //возвращает ["Mango", "Ajax", "Chelsea"]
+makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2) //возвращает ["Earth", "Jupiter"]
+makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4) //возвращает ["Earth", "Jupiter", "Neptune", "Uranus"]
+makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0) //возвращает []
+
+//17
+const start = 3;
+const end = 7;
+
+for (let i = start; i <= end; i += 1) { 
+  console.log(i);
+} */
+
+//18
+/* function calculateTotal(number) {
+  let totalNumber = 0
+   for (let i = 1; i<=number; i += 1) {
+
+totalNumber += i
+   console.log(totalNumber);
+}
+ 
+ return totalNumber
+ }
+calculateTotal(1) //возвращает 1
+calculateTotal(3) //возвращает 6
+calculateTotal(7) //возвращает 28
+calculateTotal(18) //возвращает 171
+calculateTotal(24) //возвращает 300
+calculateTotal() //со случайным числом возвращает правильное значение 
+
+//19
+const fruits = ['apple', 'plum', 'pear', 'orange'];
+
+for (let i = 0; i < fruits.length; i+=1) { 
+  const fruit = fruits[i]; 
+  console.log(fruit);
+} */
+
+//20
+/* function calculateTotalPrice(order) {
+  let total = 0;
+  for (let i = 0; i < order.length; i +=1) {
+  total += order[i]
+
+}
+  return total;
+}
+calculateTotalPrice([12, 85, 37, 4]) //возвращает 138
+calculateTotalPrice([164, 48, 291]) //возвращает 503
+calculateTotalPrice([412, 371, 94, 63, 176]) //возвращает 1116
+calculateTotalPrice([]) //со случайным массивом возвращает правильное значение */
+
+//21
+function findLongestWord(string) {
+let array = string.split(" ")
+
+console.log(array);
+let maxLength = '';
+for (const word of array) {
+//  console.log(array[i].split('').length);
+ 
+ if (word.length > maxLength.length) { 
+  //  console.log(word);
+   maxLength = word;
+   
+ }; 
+  
+};
+return maxLength;
+};
+findLongestWord("The quick brown fox jumped over the lazy dog") //возвращает jumped
+findLongestWord("Google do a roll") //возвращает Google
+findLongestWord("May the force be with you") //возвращает force
+findLongestWord("") //со случайной строкой возвращает правильное значение
+
+//22
