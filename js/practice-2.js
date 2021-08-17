@@ -307,3 +307,54 @@ calculateTotalPrice([12, 85, 37, 4]) //возвращает 138
 calculateTotalPrice([164, 48, 291]) //возвращает 503
 calculateTotalPrice([412, 371, 94, 63, 176]) //возвращает 1116
 calculateTotalPrice([]) //возвращает 0
+
+//27
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  for (let number of numbers) {
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  }
+  return filteredNumbers;
+
+}
+filterArray([1, 2, 3, 4, 5], 3) //возвращает [4, 5]
+filterArray([1, 2, 3, 4, 5], 4) //возвращает [5]
+filterArray([1, 2, 3, 4, 5], 5) //возвращает []
+filterArray([12, 24, 8, 41, 76], 38) //возвращает [41, 76]
+filterArray([12, 24, 8, 41, 76], 20) //возвращает [24, 41, 76]
+
+//29
+function getEvenNumbers(start, end) {
+ 
+ let array = []
+for (let i = start; i <= end; i +=1) {
+let number = i
+if (number % 2 === 0)
+ array.push(number)
+}
+ return array
+}
+getEvenNumbers(2, 5) //возвращает [2, 4]
+getEvenNumbers(3, 11) //возвращает [4, 6, 8, 10]
+getEvenNumbers(6, 12) //возвращает [6, 8, 10, 12]
+getEvenNumbers(8, 8) //возвращает [8]
+getEvenNumbers(7, 7) //возвращает []
+
+//32
+function includes(array, value) {
+
+for (let number of array) {
+  if (number == value) {
+      return true
+      }
+} return false
+ 
+}
+includes([1, 2, 3, 4, 5], 3) //возвращает true
+includes([1, 2, 3, 4, 5], 17) //возвращает false
+includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter") //возвращает true
+includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus") //возвращает false
+includes(["apple", "plum", "pear", "orange"], "plum") //возвращает true
+includes(["apple", "plum", "pear", "orange"], "kiwi") //возвращает false
