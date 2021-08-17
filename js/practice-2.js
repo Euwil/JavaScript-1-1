@@ -182,7 +182,7 @@ calculateTotal(3) //возвращает 6
 calculateTotal(7) //возвращает 28
 calculateTotal(18) //возвращает 171
 calculateTotal(24) //возвращает 300
-calculateTotal() //со случайным числом возвращает правильное значение 
+ 
 
 //19
 const fruits = ['apple', 'plum', 'pear', 'orange'];
@@ -204,10 +204,10 @@ for (let i = 0; i < fruits.length; i+=1) {
 calculateTotalPrice([12, 85, 37, 4]) //возвращает 138
 calculateTotalPrice([164, 48, 291]) //возвращает 503
 calculateTotalPrice([412, 371, 94, 63, 176]) //возвращает 1116
-calculateTotalPrice([]) //со случайным массивом возвращает правильное значение */
+ */
 
 //21
-function findLongestWord(string) {
+/* function findLongestWord(string) {
 let array = string.split(" ")
 
 console.log(array);
@@ -227,6 +227,83 @@ return maxLength;
 findLongestWord("The quick brown fox jumped over the lazy dog") //возвращает jumped
 findLongestWord("Google do a roll") //возвращает Google
 findLongestWord("May the force be with you") //возвращает force
-findLongestWord("") //со случайной строкой возвращает правильное значение
+ */
 
 //22
+/* function createArrayOfNumbers(min, max) {
+  const numbers = [];
+ 
+for (let i = min; i<=max; i+=1) {
+numbers.push(i)
+console.log(numbers);
+}
+return numbers;
+}
+
+createArrayOfNumbers(1, 3) //возвращает [1, 2, 3]
+createArrayOfNumbers(14, 17) //возвращает [14, 15, 16, 17]
+createArrayOfNumbers(29, 34) //возвращает [29, 30, 31, 32, 33, 34]
+
+ */
+
+//23
+/* function filterArray(numbers, value) {
+  let biggerNumbers = []
+  for (let allNumbers of numbers) {
+    console.log(allNumbers);
+    if (allNumbers > value) {
+      biggerNumbers.push(allNumbers)
+      console.log(biggerNumbers);
+    }
+  }
+  return biggerNumbers
+}
+
+filterArray([1, 2, 3, 4, 5], 3) //возвращает [4, 5]
+filterArray([1, 2, 3, 4, 5], 4) //возвращает [5]
+filterArray([1, 2, 3, 4, 5], 5) //возвращает []
+filterArray([12, 24, 8, 41, 76], 38) //возвращает [41, 76]
+filterArray([12, 24, 8, 41, 76], 20) //возвращает [24, 41, 76]
+
+
+//24
+function checkFruit(fruit) {
+  const fruits = ["apple", "plum", "pear", "orange"];
+
+  return fruits.includes(fruit); 
+} */
+
+//25
+function getCommonElements(array1, array2) {
+  let newArray = []
+  for (let number of array1){
+    
+  if (array2.includes(number)) {
+ newArray.push(number)
+  }
+  }
+  return newArray
+}
+
+getCommonElements([1, 2, 3], [2, 4]) //возвращает [2]
+getCommonElements([1, 2, 3], [2, 1, 17, 19]) //возвращает [1, 2]
+getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) //возвращает [12, 27, 3]
+getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) //возвращает [10, 30, 40]
+getCommonElements([1, 2, 3], [10, 20, 30]) //возвращает []
+
+//26
+function calculateTotalPrice(order) {
+  let total = 0;
+
+
+  for (let price of order) {
+    total += price;
+  }
+
+
+  return total;
+}
+calculateTotalPrice([12, 85, 37, 4]) //возвращает 138
+calculateTotalPrice([164, 48, 291]) //возвращает 503
+calculateTotalPrice([412, 371, 94, 63, 176]) //возвращает 1116
+calculateTotalPrice([]) //возвращает 0
