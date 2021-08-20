@@ -84,3 +84,48 @@ const spreadArray = [...ages, ...ages.slice(2,4), 233, 245]
 console.log(spreadArray); //[11, 5, 10, 19, 20, 10, 19, 233, 245]
 
 //распыление объектов
+const food = {
+    title: "cake",
+    name: "Napoleon",
+}
+const newProduct = {...food, price: 25}
+console.log(newProduct); //{title: "cake", name: "Napoleon", price: 25}
+const params = {
+    category: "sweets",
+}
+const allInform = {...food, price: 25, ...params}
+console.log(allInform); //{title: "cake", name: "Napoleon", price: 25, category: "sweets"}
+
+//REST - сбор
+
+const getTotalResult = (...args) => {
+    console.log(args); //[23, 45, 56, 15, 33, 55]
+    let total = 0
+for (let num of args) {
+    total += num
+}
+return total
+}
+console.log(getTotalResult(23, 45, 56, 15, 33, 55)); //227
+
+const scoresOfStudents = []
+function getTestResults(mail, ...args) {
+    console.log(mail);
+    console.log(args);
+    let totalScore = 0
+    for (let score of args) {
+totalScore += score
+    }
+    console.log(totalScore);
+const obj = {
+    studentMail: mail,
+        score: totalScore,
+}
+scoresOfStudents.push(obj)
+console.log(scoresOfStudents);
+}
+getTestResults("a@.gmail.com", 1, 1, 1, 0, 1, 1, 1)
+getTestResults("b@.gmail.com", 1, 1, 1, 0, 1, 0, 1)
+getTestResults("c@.gmail.com", 0, 0, 1, 0, 0, 1, 1)
+getTestResults("d@.gmail.com", 0, 1, 0, 0, 1, 1, 1)
+getTestResults("e@.gmail.com", 1, 1, 1, 1, 1, 1, 1)
