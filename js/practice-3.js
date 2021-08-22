@@ -329,7 +329,7 @@ const {
 } = forecast; */
 
 //26
-function calculateMeanTemperature(forecast) {
+/* function calculateMeanTemperature(forecast) {
   const {today: {low: todayLow, high: todayHigh}, tomorrow: {low: tomorrowLow, high: tomorrowHigh}} = forecast
   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
 }
@@ -405,3 +405,113 @@ addOverNum(50, 15, 27) //возвращает 0
 addOverNum(10, 12, 4, 11, 48, 10, 8) //возвращает 71
 addOverNum(15, 32, 6, 13, 19, 8) //возвращает 51
 addOverNum(20, 74, 11, 62, 46, 12, 36) //возвращает 218
+
+//33
+function findMatches(numbers, ...args) {
+  const matches = []; 
+for (let number of args) {
+  if (numbers.includes(number)) {
+      matches.push(number)
+}
+}
+  return matches;
+}
+findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) //возвращает [1, 2]
+findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2) //возвращает [17, 89, 2]
+findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41) //возвращает [24, 9, 41]
+findMatches([63, 11, 8, 29], 4, 7, 16) //возвращает []
+
+//34
+const bookShelf = {
+  books: ['The last kingdom', 'The guardian of dreams'],
+  getBooks() {
+    return 'Returning all books';
+  },
+  addBook(bookName) {
+    return `Adding book ${bookName}`;
+  },
+  removeBook(bookName) {
+    return `Deleting book ${bookName}`
+  },
+  updateBook(oldName, newName) {
+    return `Updating book ${oldName} to ${newName}`
+  },
+ };
+bookShelf.getBooks() //возвращает строку "Возвращаем все книги"
+bookShelf.addBook("Haze") //возвращает строку "Adding book Haze"
+bookShelf.removeBook("Red sunset") //возвращает строку "Deleting book Red sunset"
+bookShelf.updateBook("Sands of dune", "Dune") //возвращает строку "Updating book Sands of dune to Dune"
+
+//35
+const bookShelf = {
+  books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
+  updateBook(oldName, newName) {
+	this.books.splice(this.books.indexOf(oldName), 1, newName)
+  },
+};
+
+//36, 37, 38
+const atTheOldToad = {
+  potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+  addPotion(potionName) {
+ this.potions.push(potionName)
+  },
+};
+atTheOldToad.addPotion('Invisibility') //будет массив ['Speed potion', 'Dragon breath', 'Stone skin', 'Invisibility']
+atTheOldToad.addPotion('Power potion') //будет массив ['Speed potion', 'Dragon breath', 'Stone skin', 'Invisibility', 'Power potion']
+
+//39
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  removePotion(potionName) {
+    this.potions.splice(this.potions.indexOf(potionName), 1)
+  },
+};
+
+//40
+const atTheOldToad = {
+  potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+  updatePotionName(oldName, newName) {
+ 	this.potions.splice(this.potions.indexOf(oldName), 1, newName)
+   },
+}; */
+
+//41
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+  getPotions() {
+    return this.potions;
+  },
+
+  addPotion(newPotion) {
+    for (let el of this.potions){
+    if (el.name === newPotion.name) {
+      return `Error! Potion ${newPotion.name} is already in your inventory!`;
+    }
+   }
+     this.potions.push(newPotion);
+  },
+
+  removePotion(potionName) {
+    for (const potion of this.potions) {
+      if (potionName === potion.name) {
+        this.potions.splice(this.potions.indexOf(potion), 1);
+      }
+    }
+    return `Potion ${potionName} is not in inventory!`;
+  },
+
+  updatePotionName(oldName, newName) {
+    for (const potion of this.potions) {
+      if (oldName === potion.name) {
+        potion.name = newName
+      }
+    }
+  },
+
+};
+atTheOldToad.getPotions()
