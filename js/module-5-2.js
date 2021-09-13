@@ -2,7 +2,7 @@
 //КЛАССЫ
 class CreateUser {
     constructor(prop1 = 0, prop2 = 1) { //создание свойств будущего объекта
-        this.prop1 = prop1
+        this.prop1 = prop1 //this внутри функции будет ссылаться на новосозданный объект.
         this.prop2 = prop2
     }
     //добавление методов
