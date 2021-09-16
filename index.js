@@ -8,6 +8,8 @@
 //import "./js/module-5-1.js"
 //import "./js/module-5-2.js"
 //import "./js/module-6-1.js"
+//import "./js/module-7-1.js"
+import "./js/module-7-2.js"
 
 
 //PRACTICE
