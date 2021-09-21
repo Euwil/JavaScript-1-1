@@ -9,8 +9,8 @@
 //import "./js/module-5-2.js"
 //import "./js/module-6-1.js"
 //import "./js/module-7-1.js"
-import "./js/module-7-2.js"
-
+//import "./js/module-7-2.js"
+import "./js/module-8-1.js"
 
 //PRACTICE
 //import "./js/practice-1.js";
